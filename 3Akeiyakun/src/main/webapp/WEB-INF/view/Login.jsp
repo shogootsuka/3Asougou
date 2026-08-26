@@ -21,8 +21,7 @@
 <body>
 <header> 
 	<h1>
-	<img src="./static/img/airplane_logo.gif" >
-	<span class="white-text">航空チケット予約サイトログイン</span>
+	<span class="white-text">けいやくん</span>
 	</h1>
 	</header>
 	<div class="breadcrumb">

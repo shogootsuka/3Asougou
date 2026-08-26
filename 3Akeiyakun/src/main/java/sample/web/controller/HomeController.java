@@ -32,42 +32,22 @@ import sample.model.data.Shop;
 /**
  * 商品情報画面遷移サーブレット
  */
-@WebServlet("/home")
+@WebServlet("/login")
 public class HomeController extends HttpServlet {
-	
+
 	/**
 	 * DBからすべての商店と紐づくすべての商品情報を取得し、JSON文字列に変換しリクエストに設定、
 	 * 商品情報画面JSPを呼び出す。
 	 */
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		req.setCharacterEncoding("UTF-8");
 
-		String next = "/WEB-INF/view/home.jsp";
-		
-		try (Connection con = ConnectionManager.getConnection()){
-
-			ShopDao dao = new ShopDao(con);
-			List<Shop> shopList = dao.selectAll();
-
-			// JavaオブジェクトをJSON文字列に変換
-			ObjectMapper mapper = new ObjectMapper();
-			String shopListJson = mapper.writeValueAsString(shopList);	
-
-			req.setAttribute("shopList", shopListJson);
-			
-			req.setAttribute("selectedShopId", 1);
-			req.setAttribute("selectedItemId", 1);
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-			next = ERROR_PAGE;
-		}
-
+		String next = "/WEB-INF/view/Login.jsp";
 		RequestDispatcher rd = req.getRequestDispatcher(next);
 		rd.forward(req, resp);
 
 	}
-	
+
 }
