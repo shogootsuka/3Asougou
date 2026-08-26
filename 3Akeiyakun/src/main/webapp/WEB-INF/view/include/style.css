@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    
+
+    background-color: #ededed;
+   
+}
+
+/* ヘッダーを上部に固定する設定 */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    height: 70px;
+    
+    background-color: #43a047;  /* 緑色 */
+    color: #ffffff;
+    padding: 0 30px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* ロゴとタイトルのスタイル */
+.header-logo {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.header-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 「the普通」のホームボタン */
+.btn-home {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+    white-space: nowrap; /* ボタン内の文字を改行させない */
+}
+.btn-home:hover {
+    background-color: #f5f5f5;
+    border-color: #b3b3b3;
+    color: #000000;
+}
+
+/* メインコンテンツの設定 */
+.main-content {
+    padding-top: 130px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* ★ スマホではみ出たときに横スクロールさせるための枠 */
+.table-wrapper {
+    width: 90%;
+    max-width: 650px;
+    overflow-x: auto; /* はみ出したら横スクロールできるようにする */
+    -webkit-overflow-scrolling: touch; /* スマホでのスクロールを滑らかにする */
+}
+
+/* テーブルのスタイル */
+.mock-table {
+    border-collapse: collapse;
+    width: 100%; /* 親要素(table-wrapper)の幅いっぱいに広げる */
+    min-width: 500px; /* スマホでも潰れすぎないように最低の横幅を確保 */
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.mock-table th, 
+.mock-table td {
+    border: 1px solid #333333;
+    padding: 12px;
+    font-size: 16px;
+    height: 35px;
+}
+
+.mock-table th {
+    font-weight: normal;
+    background-color: #ffffff;
+}
+
+.mock-table td a {
+    color: #1a73e8;
+    text-decoration: underline;
+}
+
+/* ★ スマホサイズ（画面幅600px以下）になった時の調整 */
+@media (max-width: 600px) {
+    .fixed-header {
+        height: auto;
+        padding: 15px;
+        flex-direction: column; /* 要素を縦並びにする */
+        gap: 10px;              /* 要素同士の間隔 */
+    }
+
+    .header-logo {
+        font-size: 24px; /* ロゴを少し小さく */
+    }
+
+    .header-title {
+        font-size: 16px; /* タイトルを少し小さく */
+    }
+
+    .btn-home {
+        font-size: 12px;  /* ボタンの文字を少し小さく */
+        padding: 6px 12px; /* ボタンの余白を少し狭く */
+        width: 100%;      /* スマホ時はボタンを横いっぱいに広げて押しやすく */
+        box-sizing: border-box;
+    }
+
+    .main-content {
+        padding-top: 180px; /* ヘッダーが縦に伸びた分、上の余白を広げる */
+    }
+}
