@@ -5,10 +5,9 @@ body {
     background-color: #ededed;
 }
 
-/* ★ 変更：最上部にすべてを固定するコンテナ */
+/* ★ 最上部にすべてを固定するコンテナ */
 .fixed-container {
     position: fixed;
-	
     top: 0;
     left: 0;
     width: 100%;
@@ -29,9 +28,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-	
-	
-	
 }
 
 /* ロゴとタイトルのスタイル */
@@ -68,10 +64,19 @@ body {
     color: #000000;
 }
 
-/* ★ 変更：固定タブ（確実な余白の確保） */
+/* ★ 追加：ヘッダー真下の題名（h2）のスタイル */
+.fixed-subtitle {
+    margin: 0;
+    padding: 15px 30px 10px 30px; /* 上・左右・下の余白 */
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* ★ 固定タブ（確実な余白の確保） */
 .fixed-tabs {
-    margin-top: 5px; /* ★ ヘッダーとの間に絶対に5pxの隙間をあける */
-    padding: 0 15px; /* ★ 左右に15pxの余白をあける */
+    margin-top: 5px; /* 題名との間の隙間 */
+    padding: 0 15px; /* 左右に15pxの余白をあける */
     height: 46px;
     display: flex;
     gap: 8px;        /* ボタン同士の隙間 */
@@ -110,8 +115,8 @@ body {
 
 /* ★ 変更：メインコンテンツ（PCでの表示位置） */
 .main-content {
-    /* コンテナ全体の高さ（ヘッダー70px + 隙間5px + タブ46px + 下マージン）に合わせる */
-    padding-top: 150px; 
+    /* 題名が増えた分、要素が被らないように150pxから195pxに増やしました */
+    padding-top: 195px; 
     padding-bottom: 40px;
     display: flex;
     justify-content: center;
@@ -163,6 +168,13 @@ body {
         gap: 10px;
     }
 
+    /* スマホ時の題名の余白調整 */
+    .fixed-subtitle {
+        padding: 10px 15px 5px 15px;
+        font-size: 18px;
+        text-align: center; /* スマホ時は中央寄せが見栄えが良いです */
+    }
+
     /* スマホ時は左右の余白を少しだけタイト（10px）に調整 */
     .fixed-tabs {
         padding: 0 10px; 
@@ -185,6 +197,6 @@ body {
 
     /* ★ スマホヘッダーが縦伸びした分、コンテンツ位置を自動でさらに下げる */
     .main-content {
-        padding-top: 215px; 
+        padding-top: 290px; 
     }
 }
