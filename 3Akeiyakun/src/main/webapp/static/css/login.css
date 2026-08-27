@@ -1,0 +1,246 @@
+/*----------------------------------------------------------
+ * 演習番号       ：仕様書演習
+ * プログラム名 ：
+ * 作成日          ：2026/08/27
+ * 作成者          ：ShunNoguchi/SYS
+ *----------------------------------------------------------
+ * 修正履歴 (修正日 ： 担当者 ： 修正内容)
+ *----------------------------------------------------------
+ */
+ /* ================================
+    全体
+ ================================ */
+
+ * {
+     box-sizing: border-box;
+ }
+
+ body {
+     margin: 0;
+     background-color: #eeeeee;
+     font-family: "Yu Gothic", "Meiryo", sans-serif;
+     color: #222;
+ }
+
+
+ /* ================================
+    ヘッダー
+ ================================ */
+
+ header {
+     height: 135px;
+     background-color: #43a928;
+     border: 2px solid #006400;
+     display: flex;
+     align-items: center;
+     padding-left: 15px;
+ }
+
+ header h1 {
+     margin: 0;
+     font-size: 64px;
+     font-weight: bold;
+ }
+
+ .white-text {
+     color: white;
+ }
+
+
+ /* ================================
+    パンくずリスト
+ ================================ */
+
+ .breadcrumb {
+     height: 34px;
+     background-color: #d9f0d0;
+     border: 2px solid #43a928;
+
+     display: flex;
+     align-items: center;
+
+     padding-left: 14px;
+
+     font-size: 20px;
+ }
+
+ .breadcrumb a {
+     color: #222;
+     text-decoration: none;
+     font-weight: bold;
+ }
+
+ .breadcrumb span {
+     margin-left: 5px;
+ }
+
+
+ /* ================================
+    ログインタイトル
+ ================================ */
+
+ h2 {
+     width: 776px;
+     margin: 40px auto 15px;
+
+     text-align: center;
+     font-size: 28px;
+ }
+
+
+ /* ================================
+    フォーム
+ ================================ */
+
+ form {
+     width: 776px;
+     min-height: 505px;
+
+     margin: 0 auto;
+
+     background-color: white;
+
+     border: 2px solid #173d4d;
+
+     padding: 35px 70px;
+ }
+
+
+ /* ================================
+    テーブル
+ ================================ */
+
+ table {
+     width: 100%;
+     border-collapse: collapse;
+ }
+
+ tr {
+     height: 120px;
+ }
+
+ td {
+     padding: 10px;
+     vertical-align: middle;
+ }
+
+
+ /* ================================
+    ラベル
+ ================================ */
+
+ td#tag {
+     width: 180px;
+
+     text-align: right;
+
+     font-size: 20px;
+     white-space: nowrap;
+ }
+
+
+ /* ================================
+    必須
+ ================================ */
+
+ .required {
+     color: red;
+     margin-left: 3px;
+ }
+
+
+ /* ================================
+    入力欄
+ ================================ */
+
+ input[type="email"],
+ input[type="password"] {
+     width: 380px;
+     height: 55px;
+
+     background-color: #d9f2d1;
+
+     border: 2px solid #173d4d;
+
+     padding: 8px 12px;
+
+     font-size: 20px;
+
+     outline: none;
+ }
+
+
+ /* 入力欄をクリックしたとき */
+
+ input[type="email"]:focus,
+ input[type="password"]:focus {
+     border: 2px solid #43a928;
+ }
+
+
+ /* ================================
+    エラーメッセージ
+ ================================ */
+
+ form + * {
+     color: red;
+ }
+
+
+ /* JSPの ${message} 用 */
+
+ .message {
+     color: red;
+     font-size: 20px;
+ }
+
+
+ /* ================================
+    ボタン
+ ================================ */
+
+ button {
+     width: 140px;
+     height: 50px;
+
+     background-color: #d9f2d1;
+
+     border: 2px solid #173d4d;
+     border-radius: 9px;
+
+     font-size: 20px;
+
+     cursor: pointer;
+ }
+
+
+ /* ログインボタン */
+
+ button[type="submit"] {
+     margin-left: 40px;
+ }
+
+
+ /* リセットボタン */
+
+ button[type="reset"] {
+     margin-left: 20px;
+ }
+
+
+ /* ================================
+    ボタンにマウスを乗せたとき
+ ================================ */
+
+ button:hover {
+     background-color: #c4e9b9;
+ }
+
+
+ /* ================================
+    リンク
+ ================================ */
+
+ a {
+     text-decoration: none;
+ }
