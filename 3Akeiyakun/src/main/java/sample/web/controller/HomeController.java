@@ -34,18 +34,18 @@ import sample.model.data.Shop;
  */
 @WebServlet("/home")
 public class HomeController extends HttpServlet {
-	
+
 	/**
 	 * DBからすべての商店と紐づくすべての商品情報を取得し、JSON文字列に変換しリクエストに設定、
 	 * 商品情報画面JSPを呼び出す。
 	 */
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		req.setCharacterEncoding("UTF-8");
 
-		String next = "/WEB-INF/view/home.jsp";
-		
+		String next = "/WEB-INF/view/include/keijyouStr.jsp";
+
 		try (Connection con = ConnectionManager.getConnection()){
 
 			ShopDao dao = new ShopDao(con);
@@ -53,13 +53,13 @@ public class HomeController extends HttpServlet {
 
 			// JavaオブジェクトをJSON文字列に変換
 			ObjectMapper mapper = new ObjectMapper();
-			String shopListJson = mapper.writeValueAsString(shopList);	
+			String shopListJson = mapper.writeValueAsString(shopList);
 
 			req.setAttribute("shopList", shopListJson);
-			
+
 			req.setAttribute("selectedShopId", 1);
 			req.setAttribute("selectedItemId", 1);
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			next = ERROR_PAGE;
@@ -69,5 +69,5 @@ public class HomeController extends HttpServlet {
 		rd.forward(req, resp);
 
 	}
-	
+
 }
