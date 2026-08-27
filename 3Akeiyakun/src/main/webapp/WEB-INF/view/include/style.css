@@ -104,7 +104,7 @@ body {
     color: #1b5e20;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* 内側の影 */
 }
-
+a
 /* ★ 変更：メインコンテンツ（PCでの表示位置） */
 .main-content {
     /* コンテナ全体の高さ（ヘッダー70px + 隙間5px + タブ46px + 下マージン）に合わせる */
