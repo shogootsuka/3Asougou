@@ -50,9 +50,7 @@
 <tr>
 <td><button type="submit" id="login">ログイン</button></td>
 <td>
-<a href="${pageContext.request.contextPath}/register" >
-<button type="button" id="login">リセット</button>
-</a>
+<button type="reset" id="reset">リセット</button>
 </td>
 </tr>
 </form>

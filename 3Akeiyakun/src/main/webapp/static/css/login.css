@@ -223,7 +223,7 @@
 
  /* リセットボタン */
 
- button[type="button"] {
+ button[type="reset"] {
      margin-left: 20px;
  }
 
