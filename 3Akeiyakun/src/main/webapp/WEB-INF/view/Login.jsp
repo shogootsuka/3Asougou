@@ -51,7 +51,7 @@
 <td><button type="submit" id="login">ログイン</button></td>
 <td>
 <a href="${pageContext.request.contextPath}/register" >
-<button type="button" id="login">新規会員登録</button>
+<button type="button" id="login">リセット</button>
 </a>
 </td>
 </tr>
