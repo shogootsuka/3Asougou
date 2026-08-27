@@ -8,6 +8,7 @@ body {
 /* ★ 変更：最上部にすべてを固定するコンテナ */
 .fixed-container {
     position: fixed;
+	
     top: 0;
     left: 0;
     width: 100%;
