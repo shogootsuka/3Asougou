@@ -21,8 +21,7 @@
 <body>
 <header> 
 	<h1>
-	<img src="./static/img/airplane_logo.gif" >
-	<span class="white-text">航空チケット予約サイトログイン</span>
+	<span class="white-text">けいやくん</span>
 	</h1>
 	</header>
 	<div class="breadcrumb">
@@ -51,9 +50,7 @@
 <tr>
 <td><button type="submit" id="login">ログイン</button></td>
 <td>
-<a href="${pageContext.request.contextPath}/register" >
-<button type="button" id="login">新規会員登録</button>
-</a>
+<button type="reset" id="reset">リセット</button>
 </td>
 </tr>
 </form>
