@@ -64,11 +64,27 @@ body {
     color: #000000;
 }
 
-/* ★ 追加：ヘッダー真下の題名（h2）のスタイル */
+
+/* ★ 変更：2つの要素を横並びにして左右の端に寄せるコンテナ */
+.subtitle-container {
+    display: flex;
+    justify-content: space-between; /* 左右の端にわける */
+    align-items: center;            /* 上下の中心を揃える */
+    padding: 10px 30px 5px 30px;   
+}
+
+/* 一時保存中の契約書一覧（左側） */
 .fixed-subtitle {
     margin: 0;
-    padding: 15px 30px 10px 30px; /* 上・左右・下の余白 */
     font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* 〇〇さん（右側） */
+.user-name {
+    margin: 0;
+    font-size: 15px;
     font-weight: bold;
     color: #333333;
 }
