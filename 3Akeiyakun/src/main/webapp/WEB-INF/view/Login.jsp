@@ -44,9 +44,9 @@
        required></td>
 </tr>
 
-<tr>
-<td><button type="submit" id="login">ログイン</button></td>
-<td>
+<tr class="button-row">
+ <td colspan="2">
+<button type="submit" id="login">ログイン</button>
 <button type="reset" id="reset">リセット</button>
 </td>
 </tr>
