@@ -2,29 +2,32 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    
-
     background-color: #ededed;
-   
 }
 
-/* ヘッダーを上部に固定する設定 */
-.fixed-header {
+/* ★ 最上部にすべてを固定するコンテナ */
+.fixed-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 1000;
+    /* 下スクロール時にコンテンツがすり抜けて見えないように背景と同色にする */
+    background-color: #ededed; 
+    padding-bottom: 5px; /* 最下部にも少し余裕を持たせる */
+}
+
+/* ヘッダーの基本設定 */
+.fixed-header {
+    width: 100%;
     box-sizing: border-box;
     height: 70px;
-    
     background-color: #43a047;  /* 緑色 */
     color: #ffffff;
     padding: 0 30px;
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;
 }
 
 /* ロゴとタイトルのスタイル */
@@ -38,7 +41,7 @@ body {
     font-weight: bold;
 }
 
-/* 「the普通」のホームボタン */
+/* ホームボタン */
 .btn-home {
     display: inline-flex;
     align-items: center;
@@ -53,7 +56,7 @@ body {
     text-decoration: none;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     transition: all 0.2s ease;
-    white-space: nowrap; /* ボタン内の文字を改行させない */
+    white-space: nowrap;
 }
 .btn-home:hover {
     background-color: #f5f5f5;
@@ -61,28 +64,95 @@ body {
     color: #000000;
 }
 
-/* メインコンテンツの設定 */
+
+/* ★ 変更：2つの要素を横並びにして左右の端に寄せるコンテナ */
+.subtitle-container {
+    display: flex;
+    justify-content: space-between; /* 左右の端にわける */
+    align-items: center;            /* 上下の中心を揃える */
+    padding: 10px 30px 5px 30px;   
+}
+
+/* 一時保存中の契約書一覧（左側） */
+.fixed-subtitle {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* 〇〇さん（右側） */
+.user-name {
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333333;
+	
+}
+
+/* ★ 固定タブ（確実な余白の確保） */
+.fixed-tabs {
+    margin-top: 5px; /* 題名との間の隙間 */
+    padding: 0 15px; /* 左右に15pxの余白をあける */
+    height: 46px;
+    display: flex;
+    gap: 8px;        /* ボタン同士の隙間 */
+    box-sizing: border-box;
+}
+
+/* タブアイテム（角丸と影でボタンらしく） */
+.tab-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #333333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+}
+
+.tab-item:hover:not(.is-active) {
+    background-color: #f5f5f5;
+    border-color: #b3b3b3;
+}
+
+/* 押されている（アクティブ）ボタンのスタイル */
+.tab-item.is-active {
+    background-color: #a5d6a7; /* 薄い黄緑色 */
+    border-color: #81c784;
+    color: #1b5e20;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* 内側の影 */
+}
+
+/* ★ 変更：メインコンテンツ（PCでの表示位置） */
 .main-content {
-    padding-top: 130px;
+    /* 題名が増えた分、要素が被らないように150pxから195pxに増やしました */
+    padding-top: 195px; 
     padding-bottom: 40px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
-/* ★ スマホではみ出たときに横スクロールさせるための枠 */
+/* テーブル外枠 */
 .table-wrapper {
     width: 90%;
     max-width: 650px;
-    overflow-x: auto; /* はみ出したら横スクロールできるようにする */
-    -webkit-overflow-scrolling: touch; /* スマホでのスクロールを滑らかにする */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* テーブルのスタイル */
 .mock-table {
     border-collapse: collapse;
-    width: 100%; /* 親要素(table-wrapper)の幅いっぱいに広げる */
-    min-width: 500px; /* スマホでも潰れすぎないように最低の横幅を確保 */
+    width: 100%;
+    min-width: 500px;
     background-color: #ffffff;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
@@ -106,31 +176,46 @@ body {
     text-decoration: underline;
 }
 
-/* ★ スマホサイズ（画面幅600px以下）になった時の調整 */
+/* ★ スマホサイズ（画面幅600px以下）になった時の自動調整 */
 @media (max-width: 600px) {
     .fixed-header {
         height: auto;
         padding: 15px;
-        flex-direction: column; /* 要素を縦並びにする */
-        gap: 10px;              /* 要素同士の間隔 */
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* スマホ時の題名の余白調整 */
+    .fixed-subtitle {
+        padding: 10px 15px 5px 15px;
+        font-size: 18px;
+        text-align: center; /* スマホ時は中央寄せが見栄えが良いです */
+    }
+
+    /* スマホ時は左右の余白を少しだけタイト（10px）に調整 */
+    .fixed-tabs {
+        padding: 0 10px; 
     }
 
     .header-logo {
-        font-size: 24px; /* ロゴを少し小さく */
+        font-size: 24px;
     }
 
     .header-title {
-        font-size: 16px; /* タイトルを少し小さく */
+        font-size: 16px;
     }
 
+	
+	
     .btn-home {
-        font-size: 12px;  /* ボタンの文字を少し小さく */
-        padding: 6px 12px; /* ボタンの余白を少し狭く */
-        width: 100%;      /* スマホ時はボタンを横いっぱいに広げて押しやすく */
+        font-size: 12px;
+        padding: 6px 12px;
+        width: 100px;
         box-sizing: border-box;
     }
 
+    /* ★ スマホヘッダーが縦伸びした分、コンテンツ位置を自動でさらに下げる */
     .main-content {
-        padding-top: 180px; /* ヘッダーが縦に伸びた分、上の余白を広げる */
+        padding-top: 290px; 
     }
 }
