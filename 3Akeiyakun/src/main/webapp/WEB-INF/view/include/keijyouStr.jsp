@@ -24,9 +24,12 @@
         <h1>けいやくん</h1>
         <h2>計上</h2>
  
-    <form action="TopServlet" action="get">
-    <button class="topBtn">トップへ戻る</button>
+     <form action="TopServlet" action="get">
+     <button class="topBtn">トップへ戻る</button>
+     </form>
+    </div>
     
+    <>
     
     
     	<input type="hidden" name="shop_id" value="<c:out value="${shop.shopId}" />">
