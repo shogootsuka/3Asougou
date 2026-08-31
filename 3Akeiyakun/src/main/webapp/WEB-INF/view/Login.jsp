@@ -19,31 +19,28 @@
 <title></title>
 </head>
 <body>
-<header> 
-	<h1>
-	<span class="white-text">けいやくん</span>
-	</h1>
+<header class="fixed-header"> 
+	<div class="header-logo">けいやくん</div>
+	 <div class="header-title">一時保存一覧</div>
 	</header>
-	<div class="breadcrumb">
-    <a href="top.jsp">トップページ</a>
-    <span>&gt;</span>
-    <span>新規試算</span>
-</div>
+	
+	
 <h2>ログイン</h2>
 
 <form action="${pageContext.request.contextPath}/login" method="post">
 
 <table>
 <tr>
-<td id = "tag">メールアドレス<span class="required">必須</span></td>
+<td id = "tag">ユーザーID<span class="required">必須</span></td>
 
-<td><input type="email"
-       name="email"
+<td><input type="text"
+       name="textl"
        required></td>
 <tr>
 <td id = "tag">パスワード<span class="required">必須</span></td>
 <td><input type="password"
        name="password"
+       maxlength = 6
        required></td>
 </tr>
 

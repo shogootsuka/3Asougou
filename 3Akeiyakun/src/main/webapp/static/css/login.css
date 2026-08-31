@@ -17,31 +17,36 @@
 
  body {
      margin: 0;
-     background-color: #eeeeee;
-     font-family: "Yu Gothic", "Meiryo", sans-serif;
-     color: #222;
+     padding: 0;
+     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+     background-color: #ededed;
  }
 
-
- /* ================================
-    ヘッダー
- ================================ */
-
- header {
-     height: 135px;
-     background-color: #43a928;
-     border: 2px solid #006400;
+ /* ヘッダーの基本設定 */
+ .fixed-header {
+     width: 100%;
+     box-sizing: border-box;
+     height: 70px;
+     background-color: #43a047;  /* 緑色 */
+     color: #ffffff;
+     padding: 0 30px;
      display: flex;
+     justify-content: space-between;
      align-items: center;
-     padding-left: 15px;
  }
 
- header h1 {
-     margin: 0;
-     font-size: 64px;
+ /* ロゴとタイトルのスタイル */
+ .header-logo {
+     font-size: 32px;
      font-weight: bold;
  }
 
+ .header-title {
+     font-size: 18px;
+     font-weight: bold;
+ }
+ 
+ 
  .white-text {
      color: white;
  }
@@ -88,22 +93,6 @@
  }
 
 
- /* ================================
-    フォーム
- ================================ */
-
- form {
-     width: 776px;
-     min-height: 505px;
-
-     margin: 0 auto;
-
-     background-color: white;
-
-     border: 2px solid #173d4d;
-
-     padding: 35px 70px;
- }
 
 
  /* ================================
@@ -158,9 +147,9 @@
      width: 380px;
      height: 55px;
 
-     background-color: #d9f2d1;
+     background-color: white;
 
-     border: 2px solid #173d4d;
+     border: 2px solid gray;
 
      padding: 8px 12px;
 
