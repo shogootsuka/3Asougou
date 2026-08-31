@@ -14,16 +14,21 @@
 <head>
 	<%-- <head>タグ内定義情報のinclude --%>
 	<jsp:include page="./include/headcontent.jsp" flush="true" />
-    <title>商品追加</title>
+    <title>計上開始</title>
 </head>
-<body class="body">
+<body class="container">
 <%-- ヘッダーのinclude --%>
 <jsp:include page="./include/header.jsp" flush="true" />
 <main class="container mx-auto main"">
-    <header class="row mb-3 mt-2">
-        <h1>商品追加</h1>
-    </header>
-    <form method="post" action="./add-complete">
+    <div class="header">
+        <h1>けいやくん</h1>
+        <h2>計上</h2>
+ 
+    <form action="TopServlet" action="get">
+    <button class="topBtn">トップへ戻る</button>
+    
+    
+    
     	<input type="hidden" name="shop_id" value="<c:out value="${shop.shopId}" />">
 		<div class="card mb-3">
 			<div class="card-header"><c:out value="${shop.shopName}" />：商品情報入力</div>
