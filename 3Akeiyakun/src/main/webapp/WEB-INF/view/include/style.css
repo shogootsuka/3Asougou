@@ -5,13 +5,21 @@ body {
     background-color: #ededed;
 }
 
-.th-style {
-	    background-color: #9acd32; /* 黄緑色 */
-	    color: #ffffff;            /* 白文字 */
-	    font-weight: bold;         /* 太字 */
-	    padding: 12px 10px;        /* 表の上下の余白（見やすさのための調整用） */
-	}
-	
+/* --- [修正] th-styleの指定をより強力にする --- */
+.mock-table thead th.th-style {
+    background-color: #E2EFDA; /* 黄緑色 */
+    color: #000000;            /* 黒文字 */
+    font-weight: bold !important; /* ★最優先で太字にする */
+    padding: 12px 10px;        /* 表の上下の余白 */
+    
+    /* ブラウザのバグ除け（フォントの太さを強制固定） */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- [追記] 幅の指定（もし未追記なら入れてください） --- */
+.w-40 { width: 40%; }
+.w-30 { width: 30%; }
+
 
 /* ★ 最上部にすべてを固定するコンテナ */
 .fixed-container {
