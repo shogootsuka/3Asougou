@@ -5,6 +5,14 @@ body {
     background-color: #ededed;
 }
 
+.th-style {
+	    background-color: #9acd32; /* 黄緑色 */
+	    color: #ffffff;            /* 白文字 */
+	    font-weight: bold;         /* 太字 */
+	    padding: 12px 10px;        /* 表の上下の余白（見やすさのための調整用） */
+	}
+	
+
 /* ★ 最上部にすべてを固定するコンテナ */
 .fixed-container {
     position: fixed;
@@ -78,7 +86,7 @@ body {
     margin: 0;
     font-size: 20px;
     font-weight: bold;
-    color: #333333;
+    color: #43a047;
 }
 
 /* 〇〇さん（右側） */
@@ -168,7 +176,6 @@ body {
 
 .mock-table th {
     font-weight: normal;
-    background-color: #ffffff;
 }
 
 .mock-table td a {
