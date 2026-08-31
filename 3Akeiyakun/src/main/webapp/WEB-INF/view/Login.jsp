@@ -12,6 +12,7 @@
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet"
