@@ -1,0 +1,92 @@
+<!--------------------------------------------------------
+ 演習番号　　：仕様書演習
+ プログラム名：file
+ 作成日 　　 ：2026/08/31
+ 作成者  　　：KanonYokouchi/SYS
+-----------------------------------------------------------
+ 修正履歴 (修正日：担当者：修正内容)
+----------------------------------------------------------->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計上開始</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 固定ヘッダー -->
+    <div class="fixed-container">
+
+        <header class="fixed-header">
+            <div class="header-logo">けいやくん</div>
+
+            <div class="header-title">計上</div>
+
+            <a href="TopServlet" class="btn-home">
+                トップへ戻る
+            </a>
+        </header>
+
+        <!-- タイトル・ログインユーザー -->
+        <div class="subtitle-container">
+            <h2 class="fixed-subtitle">
+                計上開始
+            </h2>
+
+            <div class="user-name">
+                ログイン中：${loginUser}
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+
+        <div class="keijyou-box">
+
+            <h3>計上を開始します</h3>
+
+            <p class="description">
+                印刷連番を入力してください。
+            </p>
+
+            <form action="keijyouServlet" method="post">
+
+                <div class="input-area">
+
+                    <label for="printNo">
+                        印刷連番
+                    </label>
+
+                    <input
+                        type="text"
+                        id="printNo"
+                        name="printNo"
+                        placeholder="例）B0000000001"
+                        required
+                    >
+
+                </div>
+
+                <button
+                    type="submit"
+                    name="action"
+                    value="confirm"
+                    class="orangeBtn">
+                    計上開始
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
