@@ -28,7 +28,7 @@
 	
 <h2>ログイン</h2>
 
-<form action="${pageContext.request.contextPath}/login" method="post">
+<form action="/login" method="post">
 
 <table>
 <tr>

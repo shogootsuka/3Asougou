@@ -44,31 +44,9 @@ public class HomeController extends HttpServlet {
 
 		req.setCharacterEncoding("UTF-8");
 
-<<<<<<< HEAD
+
 		String next = "/WEB-INF/view/Login.jsp";
-=======
-		String next = "/WEB-INF/view/include/keijyouStr.jsp";
 
-		try (Connection con = ConnectionManager.getConnection()){
-
-			ShopDao dao = new ShopDao(con);
-			List<Shop> shopList = dao.selectAll();
-
-			// JavaオブジェクトをJSON文字列に変換
-			ObjectMapper mapper = new ObjectMapper();
-			String shopListJson = mapper.writeValueAsString(shopList);
-
-			req.setAttribute("shopList", shopListJson);
-
-			req.setAttribute("selectedShopId", 1);
-			req.setAttribute("selectedItemId", 1);
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-			next = ERROR_PAGE;
-		}
-
->>>>>>> refs/remotes/origin/main
 		RequestDispatcher rd = req.getRequestDispatcher(next);
 		rd.forward(req, resp);
 
